@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            background-color: beige;
+            border: 5px solid black;
+        }
+        .box{
+            height: 80px;
+            width: 350px;
+            background-color: blue;
+            border: 2px solid yellow;
+            margin: 10px;
+            border-radius: 10px;
+            position: relative;/*as default is static*/
+            
+            animation-name: RightMovement;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            /*speed*/
+            animation-timing-function: linear;
+            /* animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
+            /*back and forth*/
+            animation-direction: alternate;
+            /*defines what will happen at end*/
+            animation-fill-mode: both;
+            
+            /* for one line code of animation */
+            /* @keyframes duration | easing-function | delay |
+            iteration-count | direction | fill-mode | play-state | name */
+            animation: 5s linear 1s infinite alternate none running RightMovement;
+        }
+        @keyframes RightMovement {
+            from{
+                top: 0;
+                left: 0;
+            }
+            to{
+                top: 0;
+                left: 1100px;
+            }
+        }
+        .box2{
+            height: 80px;
+            width: 350px;
+            background-color: blue;
+            border: 2px solid yellow;
+            margin: 10px;
+            border-radius: 10px;
+            position: relative;
+            animation: 5s linear 1s infinite alternate none running LeftMovement;
+        }
+        @keyframes LeftMovement {
+            from{
+                top: 500px;
+                left: 1100px;
+            }
+            to{
+                top: 500px;
+                left: 0;
+            }
+        }
+        .circle{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 100px;
+            position: relative;
+            top: 150px;
+            left: 700px;
+            animation: 2s ease-in-out 0s infinite alternate-reverse none running CircleMovement;
+        }
+        @keyframes CircleMovement {
+            0%{
+                top: 1%;
+                left: 5%;
+            }
+            25%{
+                top: 5%;
+                left: 10%;
+            }
+            50%{
+                top: 10%;
+                left: 15%;
+            }
+            75%{
+                top: 15%;
+                left: 70%;
+            }
+            100%{
+                top: 70%;
+                left: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box2">
+
+        </div>
+        <div class="circle">
+
+        </div>
+    </div>
+</body>
+</html>
