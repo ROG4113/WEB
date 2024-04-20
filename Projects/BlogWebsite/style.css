@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.bodyContainer{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    max-width: 70vw;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+}
+.headerContainer{
+    margin-bottom: 2.8rem;
+}
+.headerTitle{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 2rem;
+    text-align: center;
+}
+.headerDesc{
+    text-align: center;
+    max-width: 568px;
+    color: rgb(88, 85, 85);
+    margin: 0 auto;
+}
+.mainContainer{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+@media(min-width: 550px){
+    .mainContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(min-width: 1050px){
+    .mainContainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media(min-width: 1250px){
+    .mainContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(201, 194, 194);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.cardContainer:hover .cardImage{
+    transform: scale(1.1);
+}
+.cardImageContainer{
+    position: relative;
+    overflow: hidden;
+    height: 7rem;
+}
+@media(min-width: 768px){
+    .cardImageContainer{
+        position: relative;
+        overflow: hidden;
+        height: 10rem;
+    }
+}
+.cardImage{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s 0s;
+}
+.cardTitleContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+.cardTitle{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: black;
+    margin-bottom: 0.3rem;
+    transition: all 0.2s 0s;
+}
+.cardTitle:hover{
+    color: rgb(59, 59, 238);
+}
+.cardDesc{
+    color: rgb(88, 85, 85);
+    font-size: 1rem;
+}
+.cardFooterContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-bottom: 0.5rem;
+}
+.authorContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.authorAvatar{
+    border: 1px solid rgb(88, 85, 85);
+    background-color: rgb(199, 199, 199);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-bottom: 5px;
+}
+.authorInfo{
+    display: flex;
+    flex-direction: column;
+}
+.authorName{
+    color: rgb(59, 59, 238);
+}
+.authorDate{
+    color: rgb(88, 85, 85);
+}
+.tagName{
+    border: 1px solid rgb(88, 85, 85);
+    font-size: 0.77rem;
+    border-radius: 4px;
+    line-height: 1.3rem;
+    padding: 0.25rem 0.25rem;
+    color: rgb(88, 85, 85);
+    margin-right: 2px;
+}
