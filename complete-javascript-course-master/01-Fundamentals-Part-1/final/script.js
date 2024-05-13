@@ -137,7 +137,7 @@ GOOD LUCK 😀
 // const heightJohn = 1.95;
 
 /*
-const massMark = 95;
+const massMark = 95; 
 const heightMark = 1.88;
 const massJohn = 85;
 const heightJohn = 1.76;
