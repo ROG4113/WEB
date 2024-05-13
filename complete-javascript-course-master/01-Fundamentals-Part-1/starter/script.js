@@ -230,24 +230,28 @@
 
 ////////////////////////////////////// Equality Operators: == vs. ===
 
-const age='18';
-if(age===18) console.log("You just became an adult(strict)");
-if(age==18) console.log("You just became an adult(loose)");
+// const age='18';
+// if(age===18) console.log("You just became an adult(strict)");
+// if(age==18) console.log("You just became an adult(loose)");
 
-const favourite=Number(prompt(`what's your fav number?`));
-console.log(favourite);
-console.log(typeof favourite);
+// const favourite=Number(prompt(`what's your fav number?`));
+// console.log(favourite);
+// console.log(typeof favourite);
 
-if(favourite===23){
-    console.log("Nice! 23 is an amazing number!");
-}
-else if(favourite===7){
-    console.log("7 is also a coll number");
-}
-else{
-    console.log("Number is not 23 or 7");
-}
+// if(favourite===23){
+//     console.log("Nice! 23 is an amazing number!");
+// }
+// else if(favourite===7){
+//     console.log("7 is also a coll number");
+// }
+// else{
+//     console.log("Number is not 23 or 7");
+// }
 
-if(favourite !== 23){
-    console.log("why not 23?");
-}
+// if(favourite !== 23){
+//     console.log("why not 23?");
+// }
+
+////////////////////////////////////
+// Logical Operators
+
