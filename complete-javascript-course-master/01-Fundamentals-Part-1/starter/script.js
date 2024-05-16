@@ -252,6 +252,135 @@
 //     console.log("why not 23?");
 // }
 
-////////////////////////////////////
-// Logical Operators
+////////////////////////////////////// Logical Operators
 
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive...');
+// }
+
+// const isTired = false; // C
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive...');
+// }
+
+////////////////////////////////////// Coding Challenge #3
+
+// // const scoreDolphins = (96 + 108 + 89) / 3;
+// // const scoreKoalas = (88 + 91 + 110) / 3;
+// // console.log(scoreDolphins, scoreKoalas);
+
+// // if (scoreDolphins > scoreKoalas) {
+// //   console.log('Dolphins win the trophy 🏆');
+// // } else if (scoreKoalas > scoreDolphins) {
+// //   console.log('Koalas win the trophy 🏆');
+// // } else if (scoreDolphins === scoreKoalas) {
+// //   console.log('Both win the trophy!');
+// // }
+
+// // BONUS 1
+// const scoreDolphins = (97 + 112 + 80) / 3;
+// const scoreKoalas = (109 + 95 + 50) / 3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//   console.log('Dolphins win the trophy 🏆');
+// } else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+//   console.log('Koalas win the trophy 🏆');
+// } else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
+//   console.log('Both win the trophy!');
+// } else {
+//   console.log('No one wins the trophy 😭');
+// }
+
+////////////////////////////////////// The switch Statement
+
+// const day='monday';
+
+// switch(day){
+//     case 'monday':
+//         console.log('I sleep on monday');
+//         break;
+//     case 'tuesday':
+//         console.log('I sleep on tuesday');
+//         break;
+//     case 'wednesday':
+//         console.log('I sleep on wednesday');
+//         break;
+//     case 'thursday':
+//         console.log('I sleep on thursday');
+//         break;
+//     case 'friday':
+//         console.log('I sleep on friday');
+//         break;
+//     case 'saturday':
+//         console.log('I sleep on saturday');
+//         break;
+//     case 'sunday':
+//         console.log('I sleep on sunday');
+//         break;
+//     default:
+//         console.log('Not a valid day!');
+// }
+// if (day === 'monday') {
+//     console.log('I sleep on monday');
+//   } else if (day === 'tuesday') {
+//     console.log('I sleep on tuesday');
+//   } else if (day === 'wednesday' || day === 'thursday') {
+//     console.log('I sleep');
+//   } else if (day === 'friday') {
+//     console.log('I sleep on friday');
+//   } else if (day === 'saturday' || day === 'sunday') {
+//     console.log('I sleep');
+//   } else {
+//     console.log('Not a valid day!');
+//   }
+
+////////////////////////////////////// Statements and Expressions
+
+// 3 + 4
+// 1991
+// true && false && !false
+
+// if (23 > 10) {
+//   const str = '23 is bigger';
+// }
+
+// const me = 'Jonas';
+// console.log(`I'm ${2037 - 1991} years old ${me}`);
+
+////////////////////////////////////// The Conditional (Ternary) Operator
+
+// const age=22;
+// age>=18?console.log('I like to drink milk being older than 18'):console.log('I like to drink milk being under 18');
+
+// const drink = age >= 18 ? 'water' : 'milk';
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+//   drink2 = 'water';
+// } else {
+//   drink2 = 'milk';
+// }
+// console.log(drink2);
+
+// console.log(`I like to drink ${age >= 18 ? 'water' : 'milk'}`);
+
+////////////////////////////////////// Coding Challenge #4
+
+// const bill = 100;
+// const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
