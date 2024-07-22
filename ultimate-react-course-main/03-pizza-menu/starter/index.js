@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDom from "react-dom/client"
+
 const pizzaData = [
   {
     name: "Focaccia",
@@ -42,3 +45,48 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+
+
+function App(){
+    return <div>
+        <Header/>
+        <Menu/>
+        <Footer/>
+    </div>;
+}
+
+function Pizza(){
+    return <div>
+        <img src="pizzas/spinaci.jpg" alt="pizza spinacci"></img>
+        <h2>Pizza Spinaci</h2>
+        <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
+}
+
+function Header(){
+    const style={color:'red', fontSize:'48px', textTransform:'uppercase'}
+    return <h1 style={style}>Fast React Pizza Co.</h1>
+}
+
+function Menu(){
+    return (<div>
+        <h2>Our Menu</h2>
+        <Pizza/>
+        <Pizza/>
+        <Pizza/>
+        <Pizza/>
+    </div>
+
+    );
+}
+
+function Footer(){
+    return (<footer>{new Date().toLocaleTimeString()}. We're currently open</footer>);
+}
+
+const root=ReactDom.createRoot(document.getElementById("root"));
+root.render(
+    <React.StrictMode>
+        <App/>
+    </React.StrictMode>
+);
