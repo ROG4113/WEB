@@ -61,9 +61,14 @@ function Menu() {
   return (<main className='menu'>
     <h2>Our Menu</h2>
     {pizzas.length > 0 ? (
-      <ul className="pizzas">
-        {pizzas.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name} />)}
-      </ul>
+      <>
+        <p>
+          Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious weed.
+        </p>
+        <ul className="pizzas">
+          {pizzas.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name} />)}
+        </ul>
+      </>
     ) : (<p>We're still working on our menu. Please come back later :)</p>)}
     {/* <Pizza name="Pizza Spinnaci"
       ingredients="Tomato, mozarella, spinach, and ricotta cheese"
@@ -80,13 +85,15 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  return <li className="pizza">
-    <img src={props.pizzaObj.photoName} alt="pizza spinacci"></img>
+function Pizza({ pizzaObj }) {
+  // if (pizzaObj.soldOut) return null;
+
+  return <li className={`pizza ${pizzaObj.soldOut?"sold-out":""}`}>
+    <img src={pizzaObj.photoName} alt={pizzaObj.name}></img>
     <div>
-      <h3>{props.pizzaObj.name}</h3>
-      <p>{props.pizzaObj.ingredients}</p>
-      <span>{props.pizzaObj.price + 3}</span>
+      <h3>{pizzaObj.name}</h3>
+      <p>{pizzaObj.ingredients}</p>
+      <span>{pizzaObj.soldOut?"SOLD OUT":pizzaObj.price + 3}</span>
     </div>
   </li>
 }
@@ -108,16 +115,26 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   return (<footer>
     {
-      true && (
-        <div className="order">
-          <p>
-            We're happy to welcome you between {openHour}:00 and {closeHour}:00. Come visit or order online.
-          </p>
-          <button className="btn">Order</button>
-        </div>
+      isOpen ? (
+        <Order openHour={openHour} closeHour={closeHour} />
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+        </p>
       )
     }
   </footer>
+  );
+}
+
+function Order({ openHour, closeHour }) {
+  return (
+    <div className="order">
+      <p>
+        We're happy to welcome you between {openHour}:00 and {closeHour}:00. Come visit or order online.
+      </p>
+      <button className="btn">Order</button>
+    </div>
   );
 }
 
