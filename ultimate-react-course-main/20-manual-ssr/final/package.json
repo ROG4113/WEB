@@ -16,6 +16,7 @@
     "@babel/register": "^7.23.7"
   },
   "dependencies": {
+    "20-manual-ssr": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
