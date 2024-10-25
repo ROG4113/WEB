@@ -129,4 +129,5 @@ yarn-error.log*
 ./src/auth/firebase.jsx
 ../src/auth/firebase.jsx
 firebase.jsx
-.env
+*.env
+**.env
