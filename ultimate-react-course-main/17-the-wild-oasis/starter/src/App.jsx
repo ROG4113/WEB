@@ -43,9 +43,9 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Toaster position="top-center" 
-      gutter={12} 
-      containerStyle={{margin:"8px"}} 
+      <Toaster position="top-center"
+      gutter={12}
+      containerStyle={{margin:"8px"}}
       toastOptions={{
         success:{
           duration:3000
