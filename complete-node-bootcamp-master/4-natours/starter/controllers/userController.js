@@ -1,3 +1,4 @@
+/* eslint-disable import/no-useless-path-segments */
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
 
