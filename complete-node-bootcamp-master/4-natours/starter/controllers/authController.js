@@ -1,11 +1,12 @@
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable arrow-body-style */
+const crypto=require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const sendEmail = require('./../utils/email');
-const crypto=require('crypto');
 
 const signToken = id => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -15,6 +16,18 @@ const signToken = id => {
 
 const createSendToken=(user, statusCode, res)=>{
     const token = signToken(user._id);
+    const cookieOptions={
+        expres:new Date(
+            Date.now()+process.env.JWT_COOKIE_EXPIRES_IN*24*60*60*1000
+        ),
+        httpOnly:true
+    };
+    if(process.env.NODE_ENV==='production')cookieOptions.secure=true;
+
+    res.cookie('jwt', token, cookieOptions);
+
+    // Remove password from the output
+    user.password=undefined;
 
     res.status(statusCode).json({
         status: 'success',
