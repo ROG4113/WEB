@@ -78,33 +78,33 @@ const tourSchema = new mongoose.Schema({
     secretTour: {
         type: Boolean
     },
-    startLocation:{
+    startLocation: {
         // GeoJson
-        type:{
-            type:String,
-            default:'Point',
-            enum:['Point']
+        type: {
+            type: String,
+            default: 'Point',
+            enum: ['Point']
         },
-        coordinates:[Number],
-        description:String
+        coordinates: [Number],
+        description: String
     },
-    locations:[
+    locations: [
         {
-            type:{
+            type: {
                 type: String,
-                default:'Point',
-                enum:['Point']
+                default: 'Point',
+                enum: ['Point']
             },
-            coordinates:[Number],
-            address:String,
-            description:String,
-            day:Number
+            coordinates: [Number],
+            address: String,
+            description: String,
+            day: Number
         }
     ],
-    guides:[
+    guides: [
         {
-            type:mongoose.Schema.ObjectId,
-            ref:'User'
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
         }
     ]
 }, {
@@ -112,15 +112,19 @@ const tourSchema = new mongoose.Schema({
     toObject: { virtuals: true },
 });
 
+// tourSchema.index({price:1});
+tourSchema.index({ price: 1, ratingsAverage: -1 });
+tourSchema.index({slug:1});
+
 tourSchema.virtual('durationWeeks').get(function () {
     return this.duration / 7;
 });
 
 // virtual populate
 tourSchema.virtual('reviews', {
-    ref:'Review',
-    foreignField:'tour',
-    localField:'_id'
+    ref: 'Review',
+    foreignField: 'tour',
+    localField: '_id'
 });
 
 // Document Middleware: runs before save/create
@@ -148,10 +152,10 @@ tourSchema.pre(/^find/, function (next) {
     next();
 });
 
-tourSchema.pre(/^find/, function(next){
+tourSchema.pre(/^find/, function (next) {
     this.populate({
-        path:'guides',
-        select:'-__v -passwordChangedAt'
+        path: 'guides',
+        select: '-__v -passwordChangedAt'
     });
     next();
 });
